@@ -20,6 +20,7 @@
 				border-radius: 15px;
 				padding: 50px;
 				margin-bottom: 100px;
+				position: relative;
 			}
 			a{
 				text-decoration: none;
@@ -39,10 +40,42 @@
 				margin-top: 20px;
 				border-bottom: 1px solid lightseagreen;
 			}
+			#block1{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				border: 5px solid lightseagreen;
+				border-radius: 15px;
+				top:-50px;
+				left: -50px;
+			}
+			#block2{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				border: 5px solid lightseagreen;
+				border-radius: 15px;
+				top:-35px;
+				left: 30px;
+			}
+			#block3{
+				width: 50px;
+				height: 100px;
+				position: absolute;
+				border-top: 5px solid lightseagreen;
+				border-right: 5px solid lightseagreen;
+				border-radius:0 15px 0 0;
+				top:10px;
+				right: 10px;
+			}
 		</style>
 	</head>
 	<body>
+		
 		<div id="nav">
+			<div id="block1"></div>
+			<div id="block2"></div>
+			<div id="block3"></div>
 			<div class="tittle">· 基础Git操作</div>
 			<div class="txt">
 				1.ls 查看当前所在的路径,可以查看当前目录下所有的文件夹以及文件。<br>
