@@ -30,7 +30,7 @@
 				cursor: pointer;
 				position: absolute;
 				left: 50%;
-				top: 60%;
+				top: 57.5%;
 				margin-left: -50px;
 				margin-top: -22.5px;
 			}
@@ -89,11 +89,11 @@
 				width: 600px;
 				height: 100px;
 				line-height: 100px;
-				text-align: left;
+				text-align: center;
 				position: absolute;
-				left: 60%;
+				left: 50%;
 				margin-left: -300px;
-				top: 80%;
+				top: 85%;
 				font-size: 50px;
 				color: lightseagreen;
 				display: none;
@@ -112,13 +112,11 @@
 				color: lightseagreen;
 				left: 49%;
 				margin-left: -250px;
-				top: 80%;
+				top: 65%;
 				padding: 0 20px;
 			}
 			#box{
 				width: 200px;
-				/*height: 600px;*/
-				/*border-bottom: 1px solid lightseagreen;*/
 				position: absolute;	
 				color: lightseagreen;
 				left: 30%;
@@ -155,9 +153,11 @@
 				color: lightseagreen;
 				font-size: 20px;
 			}
+			@media only screen and (max-width: 1690px) {
+				#exp{display: none;}
+			}
 			@media only screen and (max-width: 1320px) {
 				#box{display: none;}
-				#exp{display: none;}
 			}
 		</style>
 	</head>
@@ -365,7 +365,13 @@
 			goal=0;
 			initSnake();
 			snakeM();
-			newFood=new Creatfood(ran(1,29)*20,ran(1,29)*20);
+			var nx=ran(1,29)*20
+			var ny=ran(1,29)*20
+			if(ny==100&&(nx==100||nx==80||nx==60)){
+				newFood=new Creatfood(nx,ny);
+				newFood.drawfood();
+			}
+			newFood=new Creatfood(nx,ny);
 			newFood.drawfood();
 		}
 		//游戏记录
