@@ -3,10 +3,15 @@
 ##一.数据类型
 ---
 ###基础数据类型：
+
 ###1.boolean：true/false
+
 ###2.null：null=0
+
 ###3.undefined:null==undefined
+
 ###4.number：
+
   声明：var num=1;/var num=new Number();
   
   操作：num.toString();
