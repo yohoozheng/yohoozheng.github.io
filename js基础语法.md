@@ -83,7 +83,14 @@
     console.log(str.split("l"));
     //结果：["he","","o"]
     
-   substr(n,m) 保留n之后的元素，删除m个 
+  substring(n,m) 保留n以后的元素，m表示结束位置，
+  
+  	var arr=[1,2,3,4];
+  	var arr1=arr.substring(1,2);
+  	console.log(arr);
+  	//结果：[2]
+  	  
+  substr(n,m) 保留n之后的元素，删除m个 
   
   	var str="hello";
   	var str1=str.slice(1,2);/str.substring(1,2);
@@ -173,10 +180,9 @@
   	//结果：[4,3,2,1];
   
   slice(n,m) 保留n以后的元素，m表示结束位置，
-  substring同slice
   
   	var arr=[1,2,3,4];
-  	var arr1=arr.slice(1,2);/arr.substring(1,2);
+  	var arr1=arr.slice(1,2);
   	console.log(arr);
   	//结果：[2]
   
@@ -251,7 +257,7 @@
 	//console.log(b); 报错
 	console.log(fn());    
 	
-变量以及函数声明的提升
+变量声明的提升
 
 	function (){
 		a=10;
@@ -264,6 +270,14 @@
 		var b=20;
 		a=10;
 	}
+	
+js中创建函数有两种方式：函数声明式和函数字面量式。只有函数声明才存在函数提升！
+
+	console.log(f1); // function f1() {}   
+	console.log(f2); // undefined  
+	function f1() {}
+	var f2 = function() {}
+	//只有function f1(){}声明才有提升
 	
 ##二、语句
 ---
