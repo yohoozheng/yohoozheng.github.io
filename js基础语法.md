@@ -24,9 +24,8 @@
   	console.log(str.charAt(1));
   	//结果：2
   	
-  
   toUpperCase() 转换为大写
-  	
+
   	var str="hello";
   	var str1=str.toUpperCase();
   	console.log(str1);
