@@ -8,7 +8,7 @@
 				margin: 0;
 				padding: 0;
 			}
-			body{ 
+			body{
 				background: #666666;
 			}
 			canvas{
@@ -336,7 +336,12 @@
 			ipt.style.display="none";
 			score.style.display="block";
 			score.innerHTML="Score：0";
-			_name=ipt.value;
+			if(ipt.value){
+				_name=ipt.value;
+			}else{
+				_name="player";
+			}
+			
 			snakeBody=[];
 			speedX=20;
 			speedY=0;
