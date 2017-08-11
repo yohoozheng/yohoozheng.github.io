@@ -1,21 +1,22 @@
-#JS基础语法#
-===
-##一.数据类型
----
-###基础数据类型：
+# JS基础语法 #
+=== 
+## 一.数据类型
+ 
+--- 
+### 基础数据类型：
 
-###1.boolean：true/false
+### 1.boolean：true/false
 
-###2.null：null=0
+### 2.null：null=0
 
-###3.undefined:null==undefined
+### 3.undefined:null==undefined
 
-###4.number：
+### 4.number：
 
   声明：var num=1;/var num=new Number();
   
   操作：num.toString();
-###5.String:
+### 5.String:
   声明：var str="";/var str=new String();
   
   
@@ -112,7 +113,7 @@
     //结果：123
   
   
-###6.Array
+### 6.Array
   声明：var arr=[];/var str=new Array();
   
   操作：
@@ -197,7 +198,7 @@
   	var str=arr.join("0");
   	console.log(str);
   	//结果：10203
-###7.Object
+### 7.Object
 
 声明：var obj={};/var obj=new Object();
 
@@ -220,7 +221,7 @@
 	img.vspace 图片上下空间
 	img.hspace 图片左右空间
 
-###8.function
+### 8.function
 匿名函数：function()
 
 命名函数：var fn=function(){}/function fn(){}
@@ -284,9 +285,9 @@ js中创建函数有两种方式：函数声明式和函数字面量式。只有
 	var f2 = function() {}
 	//只有function f1(){}声明才有提升
 	
-##二、语句
----
-###1.循环语句
+## 二、语句
+--- 
+### 1.循环语句
 for循环
 
 	for(var i=0;i<num;i++){
@@ -302,7 +303,7 @@ while循环
 		i++;
 	}
 	//只要i<5就一直循环，没有具体循环次数
-###2.分支语句
+### 2.分支语句
 if语句
 
 	if（ ）{
@@ -324,11 +325,11 @@ switch语句
   		default://其他
   			break;//终止本次循环
   	}
-###3.弹出语句
+### 3.弹出语句
 alert(“123”)//弹出内容
 
 prompt(“123”)//弹出后可输入内容
 
 confirm("123")//弹出后询问确认
-###4.打印语句
+### 4.打印语句
 console.log()
