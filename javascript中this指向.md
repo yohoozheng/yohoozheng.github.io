@@ -1,5 +1,4 @@
-# JavaScript中this指向  
-=== 
+# JavaScript中this指向   
 ## 一、JavaScript中的函数  
 --- 
 在了解this指向之前，要先弄明白函数执行时它的执行环境是如何创建的，这样可以更清楚的去理解JavaScript中的this指向。  
