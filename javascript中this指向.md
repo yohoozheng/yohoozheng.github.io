@@ -38,12 +38,12 @@ JavaScript中函数的调用有以下几种方式：作为构造函数调用，�
 
 	
 	var obj={  
-	x:1,  
-	fn:{  
-		fn1:function (){  
-			console.log(this.x);
-    	}
-    }  
+		x:1,  
+		fn:{  
+			fn1:function (){  
+				console.log(this.x);
+    			}
+    		}  
     }  
     obj.fn.fn1(); //undefined  
     
