@@ -222,6 +222,10 @@ body{
 .recent-single-post a:hover{
 	color: rgb(214,49,73);
 }
+.recent-single-post span{
+	color: rgb(214,49,73);
+	font-size: 17px;
+}
 .post:hover{
 	margin-left: -5px;
 	margin-top: -5px;
