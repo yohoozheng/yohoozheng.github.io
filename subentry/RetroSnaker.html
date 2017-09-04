@@ -326,6 +326,10 @@
 				//判断食物是否在身上生成
 				for(var i=1;i<snakeBody.length;i++){
 					if(newFood.x==snakeBody[i].x&&newFood.y==snakeBody[i].y){
+						ctx.beginPath();
+						fillstyle="lightseagreen";
+						ctx.fillRect(newFood.x,newFood.y,20,20);
+						ctx.closePath();
 						newFood=new Creatfood(ran(1,29)*20,ran(1,29)*20);
 						newFood.drawfood();
 					}
