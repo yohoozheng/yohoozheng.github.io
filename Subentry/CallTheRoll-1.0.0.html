@@ -182,28 +182,42 @@
 		<div id="txtBox">
 			<div class="txt">
 				<span>第一题：</span>
-				<span>你知道什么是CSS reset吗？</span>
+				<span>如何让元素(div)居中？垂直居中？</span>
 				<span class="answer">查看答案</span>
-				<p>CSS reset就是CSS样式重置，也就是我们在写CSS的时候最先要写的*{margin：0；padding：0；}最早的一份CSS reset来自tantek，很简单的代码，tantke根据自己的需要对浏览器的默认样式进行了一些重置。CSSreset的作用就是让各个浏览器的CSS样式有一个统一的基准，而这个基准更多地就是清零！可以说，兼容性是CSS reset诞生的主要原因之一，当然还有一方面的原因是类似于“库”的作用。</p>
+				<p>margin:0 auto; 是默认的居中，但是有要求的，元素不能浮动，必须有宽度。</br></br>
+					而left:50%，然后在margin-left元素的一半的大小这种居中方法，一般用于带有浮动的元素，兼容性好些，还能用于上下居中，但如果不知道要居中元素的宽高是就需要在JS中获取宽高并设置margin-left/margin-top</p>
 				<div class="close">关闭</div>
 			</div>
 			<div class="txt">
 				<span>第二题：</span>
-				<span>你知道什么是CSS reset吗？</span>
+				<span>Ajax的原理是什么？</span>
 				<span class="answer">查看答案</span>
-				<p>CSS reset就是CSS样式重置，也就是我们在写CSS的时候最先要写的*{margin：0；padding：0；}最早的一份CSS reset来自tantek，很简单的代码，tantke根据自己的需要对浏览器的默认样式进行了一些重置。CSSreset的作用就是让各个浏览器的CSS样式有一个统一的基准，而这个基准更多地就是清零！可以说，兼容性是CSS reset诞生的主要原因之一，当然还有一方面的原因是类似于“库”的作用。</p>
+				<p>Ajax的原理就是运用XMLHttpRequest对象实现网页的异步更新，即在不重载页面的情况下向后台传送数据，从后台接收数据以及更新网页
+				if(window.XMLHttpRequest){</br>
+				&nbsp;&nbsp;"//IE7及以上和标准浏览器</br>
+				&nbsp;&nbsp;ajaxObj=new XMLHttpRequest();</br>
+				}else{</br>
+				&nbsp;&nbsp;//IE5,IE6</br>
+				&nbsp;&nbsp;ajaxObj=new ActiveXObject("Microsoft.XMLHTTP");</br>
+				}</br>
+				</p>
 				<div class="close">关闭</div>
 			</div>
 			<div class="txt">
 				<span>第三题：</span>
-				<span>现在我们使用的HTML5都有哪些新特性？</span>
+				<span>如何减少网页的加载时间？</span>
 				<span class="answer">查看答案</span>
 				<p>
-					1.语义化特性：HTML5赋予了网页更好的意义和结构，新增语义化标签，比如header、nav等</br></br>
-					2.新的表单控件：email，url等。</br></br>
-					3.多媒体特性：video、audio</br></br>
-					4.用于绘画的canvas标签</br></br>
-					5.本地存储技术
+					1.避免坏请求</br>
+					2.合并CSS文件</br>
+					3.避免JS阻塞渲染</br>
+					4.缩小原始图像</br>
+					5.雪碧图</br>
+					6.减少重定向：刷新后重复提交</br>
+					7.减少DNS查找</br>
+					8.预加载组件</br>
+					&nbsp;:</br>
+					&nbsp;:</br>
 				</p>
 				<div class="close">关闭</div>
 			</div>
@@ -225,7 +239,7 @@
 				<span>第六题：</span>
 				<span>浏览器可以并行下载多少个资源？</span>
 				<span class="answer">查看答案</span>
-				<p>浏览器的并发请求数是不一样的，一般在10以内，而IE浏览器是2到4个。</p>
+				<p>浏览器的并发请求数是不一样的，IE6是2个，IE7及以上的并发数是6个，FF和Chrome是6个，而safair并发请求数为4。</p>
 				<div class="close">关闭</div>
 			</div>
 			<div class="txt">
@@ -262,7 +276,7 @@
 			<div class="horn rightTop"></div>
 			<div class="horn leftBottom"></div>
 			<div class="horn rightBottom"></div>
-			<div id="qptxt">Full</div>
+			<div id="qptxt">全屏</div>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -420,7 +434,7 @@
 			var ev=window.event||e;
 			switch (ev.keyCode){
 				case 27:
-					qptxt.innerText="Full";
+					qptxt.innerText="全屏";
 				break;
 			}
 		}
