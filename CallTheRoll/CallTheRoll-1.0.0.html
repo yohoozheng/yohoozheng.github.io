@@ -3,170 +3,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Call The Roll-1.0.0</title>
-		<link rel="icon" href="target_128px_1207858_easyicon.net.ico" type="image/x-icon">
-		<style type="text/css">
-			*{margin: 0;	padding: 0;background: #303030;}
-			body{background: #303030;}
-			ul{	width: 1212px;height: 606px;list-style: none;position: absolute;left: 50%;margin-left: -600px;top: 39%;margin-top: -300px;}
-			li{width: 200px;	height: 200px;border: 5px solid #ccc;box-sizing: border-box;text-align: center;line-height: 200px;color: #ccc;font-size: 55px;margin: 1px;}
-			span{font-size: 40px;color: #303030;background: #ccc;}
-			p{margin-top: 50px;font-size: 30px;display: none;background: #ccc;}
-			.top{float: left;}
-			.right{position: absolute;right: 0;}
-			.r1{	top: 202px;}.r2{	top: 404px;}
-			.bottom{	position: absolute;bottom: 0;}
-			.b1{	right: 202px;}
-			.b2{	right: 404px;}
-			.b3{	left: 404px;	}
-			.b4{	left: 202px;	}
-			.b5{	left: 0;	}
-			.left{position: absolute;left: 0;top: 202px;}
-			#target{	border: 5px solid #ccc;	background: #ccc ;color: #303030;}
-			#targeted{border: 5px solid #ccc;background: #666 ;color: #303030;}
-			#start{
-				border: 2px solid darkgray;
-				border-right: 10px solid #666;
-				border-bottom: 10px solid #666;
-				border-radius: 15px;
-				width: 362px;
-				height: 96px;
-				position: absolute;
-				left: 50%;
-				margin-left: -181px;
-				top: 39%;
-				margin-top: -48px;
-				text-align: center;
-				line-height: 96px;
-				font-size: 50px;
-				cursor: pointer;
-				color: #303030;
-				background: #ccc;
-			}
-			#testBox{
-				width: 700px;
-				height: 70px;
-				position: absolute;
-				left: 50%;
-				margin-left: -350px;
-				top: 85%;
-				margin-top: -35px;
-			}
-			.test{
-				width: 50px ;
-				height: 50px;
-				border: 5px solid #303030;
-				margin: 0 5px ;
-				float: left;
-				text-align: center;
-				line-height: 50px;
-				color: #ccc;
-				font-size: 50px;
-				cursor: pointer;
-			}
-			#deal{border-radius: 50%;color: #303030;background: #ccc;}
-			#txtBox{
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 999;
-				background: rgba(0,0,0,.8);
-				display: none;
-			}
-			.txt{
-				width: 55%;
-				height: 70%;
-				background: #ccc;
-				position: relative;
-				margin: 50px auto;
-				padding: 50px;
-				color: #303030;
-				display: none;
-			}
-			.answer{	font-size: 20px;	cursor: pointer;	}
-			.answer:hover{text-decoration: underline;}
-			.close{
-				width: 100px;
-				height: 25px;
-				text-align: center;
-				line-height: 25px;
-				cursor: pointer;
-				position: absolute;
-				left: 50%;
-				margin-left: -50px;
-				bottom: 2%;
-				border: 2px solid #303030;
-				color: #303030;
-				background: #ccc;
-			}
-			.close:hover{background: #303030;color: #ccc;}
-			#qp{
-				width: 100px;
-				height: 30px;
-				background: #303030;
-				position: absolute;
-				left: 50%;
-				margin-left: -50px;
-				bottom: 3%;
-				cursor: pointer;
-			}
-			.horn{background: #303030;width: 5px;height: 5px;}
-			.leftTop{
-				position: absolute;
-				top: -5px;
-				left: -5px;
-				border-top: 5px solid #ccc;
-				border-left: 5px solid #ccc;
-			}
-			.rightTop{
-				position: absolute;
-				top: -5px;
-				right: -5px;
-				border-top: 5px solid #ccc;
-				border-right: 5px solid #ccc;
-			}
-			.leftBottom{
-				position: absolute;
-				bottom: -5px;
-				left: -5px;
-				border-bottom: 5px solid #ccc;
-				border-left: 5px solid #ccc;
-			}
-			.rightBottom{
-				position: absolute;
-				bottom: -5px;
-				right: -5px;
-				border-bottom: 5px solid #ccc;
-				border-right: 5px solid #ccc;
-			}
-			#qptxt{
-				width: 100%;
-				height: 100%;
-				text-align: center;
-				line-height: 30px;
-				font-size: 20px;
-				position: absolute;
-				color: #ccc;
-			}
-		</style>
+		<link rel="icon" href="Image/target_128px_1207858_easyicon.net.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="Css/main.css"/>
 	</head>
 	<body>
+		<!--点名部分-->
 		<ul>
 			<li class="top">赵岗</li>
 			<li class="top">朴铭杰</li>
 			<li class="top">刘婧博</li>
-			<li class="top">苗荟婷</li>
-			<li class="top">高京京</li>
 			<li class="top">张翔宇</li>
-			<li class="right r1">白鹏飞</li>
-			<li class="right r2">蒙芃憧</li>
-			<li class="bottom b1">鲁颂贺</li>
+			<li class="top">白鹏飞</li>
+			<li class="top">苗荟婷</li>
+			<li class="right r1">蒙芃憧</li>
+			<li class="right r2">鲁颂贺</li>
+			<li class="bottom b1">高京京</li>
 			<li class="bottom b2">孟宪英</li>
 			<li class="bottom b3">南晓烊</li>
 			<li class="bottom b4">冯有强</li>
 			<li class="bottom b5">吴嘉怡</li>
 			<li class="left" id="target">开始</li>
 		</ul>
-		<div id="start">m9(`Д´)就si你</div>
+		<!--开始/停止按钮-->
+		<div id="start">m9(`Д´)就sì你</div>
+		<!--题目按钮-->
 		<div id="testBox">
 			<div class="test">①</div>
 			<div class="test">②</div>
@@ -179,7 +39,9 @@
 			<div class="test">⑨</div>
 			<div class="test">⑩</div>
 		</div>
+		<!--题目-->
 		<div id="txtBox">
+			<!--第一题-->
 			<div class="txt">
 				<span>第一题：</span>
 				<span>如何让元素(div)居中？垂直居中？</span>
@@ -188,6 +50,7 @@
 					而left:50%，然后在margin-left元素的一半的大小这种居中方法，一般用于带有浮动的元素，兼容性好些，还能用于上下居中，但如果不知道要居中元素的宽高是就需要在JS中获取宽高并设置margin-left/margin-top</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第二题-->
 			<div class="txt">
 				<span>第二题：</span>
 				<span>Ajax的原理是什么？</span>
@@ -203,6 +66,7 @@
 				</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第三题-->
 			<div class="txt">
 				<span>第三题：</span>
 				<span>如何减少网页的加载时间？</span>
@@ -221,6 +85,7 @@
 				</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第四题-->
 			<div class="txt">
 				<span>第四题：</span>
 				<span>你了解JS中的函数执行时执行环境是如何创建的吗？</span>
@@ -228,6 +93,7 @@
 				<p>当调用函数时，首先函数会创建一个活动对象，也叫做变量对象，接着为函数调用创建一个类似数组的arguments对象用于保存传入的参数，再为执行环境分配作用域链，初始化变量，将函数内部除了实参和函数声明有值外，都被初始化为undefined，最后为this关键字赋值，至此函数环境创建成功，成功后开始将形参逐个进行赋值，最后执行函数内部语句。</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第五题-->
 			<div class="txt">
 				<span>第五题：</span>
 				<span>jQuery和Zepto的区别？各自的使用场景？</span>
@@ -235,6 +101,7 @@
 				<p>jQuery主要用于pc端，当然有对应的jQuerymobile用于移动端，zepto比jQuery更加小巧，主要用于移动端，jquer mobile相对于zepto功能强大，但是体积也很庞大，zepto非常的轻量</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第六题-->
 			<div class="txt">
 				<span>第六题：</span>
 				<span>浏览器可以并行下载多少个资源？</span>
@@ -242,6 +109,7 @@
 				<p>浏览器的并发请求数是不一样的，IE6是2个，IE7及以上的并发数是6个，FF和Chrome是6个，而safair并发请求数为4。</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第七题-->
 			<div class="txt">
 				<span>第七题：</span>
 				<span>你了解哪些布局？你平时有使用过什么布局实现</span>
@@ -249,6 +117,7 @@
 				<p>浮动和定位，自适应布局，还有响应式以及弹性布局，弹性布局兼容所有浏览器，只不过IE6的话需要专门为它设计一些样式，而且由于它存在弹性，所以可以随用户的喜好来调节。首先浮动和定位的布局需要对各种不同的设备进行调节，每一个大小的设备都需要重新设定和更改。而自适应和响应式布局虽然可以很好地适应各种尺寸但是需要做浏览器的兼容，工作量大，而且代码多，使网页的加载变慢。</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第八题-->
 			<div class="txt">
 				<span>第八题：</span>
 				<span>你知道什么是CSS预处理吗？</span>
@@ -256,6 +125,7 @@
 				<p>CSS预处理就是给CSS加入一些编程元素，让CSS能够像其他其他程序语言一样可以做一些预定的处理，这样既能提高开发效率，又能让代码变得通俗易懂，维护起来更便捷，也让CSS的功能更多更强，比如用CSS做出JS的特效，但他也有缺点，比如正因为让CSS功能更多更强而导致的CSS的内容增多，这就让用户打开的速度变慢，降低了用户的体验。</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第九题-->
 			<div class="txt">
 				<span>第九题：</span>
 				<span>你平常写CSS的时候有考虑过CSS的性能吗？</span>
@@ -263,6 +133,7 @@
 				<p>如果不考虑CSS的性能，那网页在以后的维护和修改中会面临很多问题，代码就会变得越来越多，所以平时在写CSS的时候一般都会注意CSS的内容，比如不乱用浮动，移出空的CSS规则，不乱用web字体，不声明过多的font-size，还有就是注意正确使用display属性。</p>
 				<div class="close">关闭</div>
 			</div>
+			<!--第十题-->
 			<div class="txt">
 				<span>第十题：</span>
 				<span>你知道什么是CSS reset吗？</span>
@@ -271,6 +142,7 @@
 				<div class="close">关闭</div>
 			</div>
 		</div>
+		<!--全屏按钮-->
 		<div id="qp">
 			<div class="horn leftTop"></div>
 			<div class="horn rightTop"></div>
@@ -278,166 +150,13 @@
 			<div class="horn rightBottom"></div>
 			<div id="qptxt">全屏</div>
 		</div>
+		<!--
+		Then end. 丨 Rh九尾鱼 丨 Bug提交：yohoozheng324@163.com
+		——————————————————————— v1.0.0 ————————————————————————
+		1.link中icon图标无法引入网络路径，大部分图片有版权不显示。
+		2.在随机过程中还可以再次点击开始按钮。
+		3.退出全屏函数失效，已删除，在修改。
+-->
 	</body>
-	<script type="text/javascript">
-		//声明元素(＾－＾)V
-		var start=document.getElementById("start");
-		var ali=document.getElementsByTagName("li");
-		var test=document.getElementsByClassName("test");
-		var txtBox=document.getElementById("txtBox");
-		var txt=document.getElementsByClassName("txt");
-		var answer=document.getElementsByClassName("answer");
-		var close=document.getElementsByClassName("close");
-		var sp=document.getElementsByTagName("p");
-		var qp=document.getElementById("qp");
-		var qptxt=document.getElementById("qptxt");
-		//获取可是宽高
-		var cHeight=document.documentElement.clientHeight||innerHeight;
-		var cWidth=document.documentElement.clientWidth||innerWidth;
-		//蒙版层填充屏幕
-		txtBox.style.width=cWidth+"px";
-		txtBox.style.height=cHeight+"px";
-		//初始化变量(⊙__⊙)b
-		var bol=false;//判断开始和停止
-		var timer=null;//开始定时器
-		var timer1=null;//结束时改变速度定时器
-		var timer2=null;//选题定时器
-		var speed=30;//初始化速度
-		var nameArr=[0,1,2,3,4,5,6,7,8,9,10,11,12];//初始化题目
-		var testArr=[0,1,2,3,4,5,6,7,8,9];//初始化题目
-		var rand=0;//初始化当前题目
-		var n=0;//初始化姓名编号
-		//随机数函数Σ（ﾟдﾟlll）
-		function ranDom(min,max){
-			return parseInt(Math.random()*(max-min+1)+min);
-		}
-		//开始点名٩(๑>◡<๑)۶
-		function startCallOver(speed){
-			timer=setInterval(function(){
-				if(n>=nameArr.length-1){
-					n=-1;
-				}
-				n+=1;
-				for(var i=0;i<nameArr.length;i++){
-					ali[nameArr[i]].removeAttribute("id");
-				}
-				ali[nameArr[n]].setAttribute("id","target");
-			},speed)
-		}
-		//开始选题！乂(ﾟДﾟ三ﾟДﾟ)乂 
-		function startChoose(speed){
-			timer2=setInterval(function(){
-				rand=ranDom(0,testArr.length-1);
-				for(var i=0;i<testArr.length;i++){
-					test[testArr[i]].removeAttribute("id");
-				}
-				test[testArr[rand]].setAttribute("id","deal");
-			},speed)
-		}
-		//开始改变速度ヾ(=･ω･=)o
-		function changeSpeed(ran){
-			timer1=setInterval(function(){
-				speed+=ran;
-				clearInterval(timer);
-				startCallOver(speed);
-				if(speed>=600){
-					clearInterval(timer1);
-					clearInterval(timer);
-					var n1=n;
-					//作弊系统o(*////▽////*)q
-					//使用方法：不想被提问到的童鞋请在HTML里将自己名字写在最后一个li里，并打开此代码。并注释掉//1和//2代码。
-					if(n1==nameArr.length-1){
-						ali[nameArr[n1]].removeAttribute("id");
-						n1=0;
-						ali[nameArr[n1]].setAttribute("id","targeted");
-						nameArr.splice(n1,1);
-					}else{
-						ali[nameArr[n1]].setAttribute("id","targeted");
-						nameArr.splice(n1,1);
-					}
-//					ali[nameArr[n1]].setAttribute("id","targeted");//1
-//					nameArr.splice(n1,1);//2
-				}
-			},600)
-		}
-		//开始停止按钮事件(～￣▽￣)～
-		start.onclick=function(){
-			if(bol==false){
-				//如果是false那就开始（￣︶￣）↗
-				start.style.borderBottom="2px solid #666";
-				start.style.borderRight="2px solid #666";
-				start.style.transform="translate(8px,8px)";
-				speed=30;
-				bol=true;
-				startChoose(30);
-				startCallOver(speed);
-			}else if(bol){
-				//如果是true那就停止（￣︶￣）↗
-				start.style.borderBottom="10px solid #666";
-				start.style.borderRight="10px solid #666";
-				start.style.transform="translate(0)";
-				var ran=ranDom(50,150);
-				bol=false;
-				changeSpeed(ran);
-				clearInterval(timer2);
-				test[testArr[rand]].setAttribute("id","deal");
-				testArr.splice(rand,1);//去除选择过的题目
-			}
-		}
-		//显示对应题目☆´∀｀☆
-		for(var i=0;i<test.length;i++){
-			test[i].index=i;
-			test[i].onclick=function(){
-				test[this.index].style.background="#666";
-				test[this.index].style.borderRadius="50%";
-				txtBox.style.display="block";
-				for(var j=0;j<txt.length;j++){
-					txt[j].style.display="none";
-				}
-				txt[this.index].style.display="block";
-			}
-		}
-		//显示对应答案ヾ(^▽^ヾ)
-		for(var i=0;i<answer.length;i++){
-			answer[i].index=i;
-			answer[i].onclick=function(){
-				for(var j=0;j<sp.length;j++){
-					sp[j].style.display="none";
-				}
-				sp[this.index].style.display="block";
-			}
-		}
-		//关闭蒙版层Σ(oﾟдﾟoﾉ)
-		for(var i=0;i<close.length;i++){
-			close[i].onclick=function(){
-				txtBox.style.display="none";
-			}
-		}
-		//进入全屏─=≡Σ(((つ•̀ω•́)つ))
-		function requestFullScreen() {  
-		    var de = document.documentElement;  
-		    if (de.requestFullscreen) {  
-		        de.requestFullscreen();  
-		    } else if (de.mozRequestFullScreen) {  
-		        de.mozRequestFullScreen();  
-		    } else if (de.webkitRequestFullScreen) {  
-		        de.webkitRequestFullScreen();  
-		    }  
-		} 
-		//点击进全屏！彡(-_-;)彡
-		qp.onclick=function(){
-			requestFullScreen();
-			qptxt.innerText="Esc";
-		}
-		//按ESC退出！U•ェ•*U
-		document.onkeydown=function(e){
-			var ev=window.event||e;
-			switch (ev.keyCode){
-				case 27:
-					qptxt.innerText="全屏";
-				break;
-			}
-		}
-		//Then end.   Bug提交：yohoozheng324@163.com
-	</script>
+	<script src="Javascript/main.js"></script>
 </html>

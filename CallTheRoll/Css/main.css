@@ -1,0 +1,152 @@
+*{margin: 0;	padding: 0;background: #303030;}
+body{background: #303030;}
+ul{	width: 1212px;height: 606px;list-style: none;position: absolute;left: 50%;margin-left: -600px;top: 39%;margin-top: -300px;}
+li{width: 200px;	height: 200px;border: 5px solid #ccc;box-sizing: border-box;text-align: center;line-height: 200px;color: #ccc;font-size: 55px;margin: 1px;}
+span{font-size: 40px;color: #303030;background: #ccc;}
+p{margin-top: 50px;font-size: 30px;display: none;background: #ccc;}
+.top{float: left;}
+.right{position: absolute;right: 0;}
+.r1{top: 202px;}
+.r2{top: 404px;}
+.bottom{position: absolute;bottom: 0;}
+.b1{right: 202px;}
+.b2{	right: 404px;}
+.b3{left: 404px;}
+.b4{left: 202px;	}
+.b5{left: 0;}
+.left{position: absolute;left: 0;top: 202px;}
+#target{border: 5px solid #ccc;background: #ccc ;color: #303030;}
+#targeted{border: 5px solid #ccc;background: #666 ;color: #303030;}
+#start{
+	border: 2px solid darkgray;
+	border-right: 10px solid #666;
+	border-bottom: 10px solid #666;
+	border-radius: 15px;
+	width: 362px;
+	height: 96px;
+	position: absolute;
+	left: 50%;
+	margin-left: -181px;
+	top: 39%;
+	margin-top: -48px;
+	text-align: center;
+	line-height: 96px;
+	font-size: 50px;
+	cursor: pointer;
+	color: #303030;
+	background: #ccc;
+}
+#testBox{
+	width: 700px;
+	height: 70px;
+	position: absolute;
+	left: 50%;
+	margin-left: -350px;
+	top: 85%;
+	margin-top: -35px;
+}
+.test{
+	width: 50px ;
+	height: 50px;
+	border: 5px solid #303030;
+	margin: 0 5px ;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	color: #ccc;
+	font-size: 50px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all .1s;
+}
+.test:hover{
+	box-shadow: 5px 5px 5px black;
+	margin-left: -5px;
+	margin-top: -5px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+#deal{border-radius: 50%;color: #303030;background: #ccc;}
+#txtBox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(0,0,0,.8);
+	display: none;
+}
+.txt{
+	width: 55%;
+	height: 70%;
+	background: #ccc;
+	position: relative;
+	margin: 50px auto;
+	padding: 50px;
+	color: #303030;
+	display: none;
+}
+.answer{	font-size: 20px;	cursor: pointer;	}
+.answer:hover{text-decoration: underline;}
+.close{
+	width: 100px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	cursor: pointer;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	bottom: 2%;
+	border: 2px solid #303030;
+	color: #303030;
+	background: #ccc;
+}
+.close:hover{background: #303030;color: #ccc;}
+#qp{
+	width: 100px;
+	height: 30px;
+	background: #303030;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	bottom: 3%;
+	cursor: pointer;
+}
+.horn{background: #303030;width: 5px;height: 5px;}
+.leftTop{
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	border-top: 5px solid #ccc;
+	border-left: 5px solid #ccc;
+}
+.rightTop{
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	border-top: 5px solid #ccc;
+	border-right: 5px solid #ccc;
+}
+.leftBottom{
+	position: absolute;
+	bottom: -5px;
+	left: -5px;
+	border-bottom: 5px solid #ccc;
+	border-left: 5px solid #ccc;
+}
+.rightBottom{
+	position: absolute;
+	bottom: -5px;
+	right: -5px;
+	border-bottom: 5px solid #ccc;
+	border-right: 5px solid #ccc;
+}
+#qptxt{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	position: absolute;
+	color: #ccc;
+}
