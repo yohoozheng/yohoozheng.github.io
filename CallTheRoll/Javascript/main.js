@@ -25,6 +25,7 @@ var nameArr=[0,1,2,3,4,5,6,7,8,9,10,11,12];//初始化题目
 var testArr=[0,1,2,3,4,5,6,7,8,9];//初始化题目
 var rand=0;//初始化当前题目
 var n=0;//初始化姓名编号
+var no=0;//初始化次数；
 //随机数函数Σ（ﾟдﾟlll）
 function ranDom(min,max){
 	return parseInt(Math.random()*(max-min+1)+min);
@@ -61,27 +62,27 @@ function changeSpeed(ran){
 		if(speed>=600){
 			clearInterval(timer1);
 			clearInterval(timer);
-			var n1=n;
-			//作弊系统o(*////▽////*)q
-			//使用方法：不想被提问到的童鞋请在HTML里将自己名字写在最后一个li里，并打开此代码。并注释掉//1和//2代码。
-			if(n1==nameArr.length-1){
-				ali[nameArr[n1]].removeAttribute("id");
-				n1=0;
-				ali[nameArr[n1]].setAttribute("id","targeted");
-				nameArr.splice(n1,1);
-			}else{
-				ali[nameArr[n1]].setAttribute("id","targeted");
-				nameArr.splice(n1,1);
+			//↓↓↓↓↓↓↓↓作弊系统！(;￢＿￢)   
+			//使用方法：将不想被选中的人名填入最后一个li中，并打开以下注释代码，关闭//1代码。
+			if(n==nameArr.length-1){
+				ali[nameArr[n]].removeAttribute("id");
+				n=0;
+				ali[nameArr[n]].setAttribute("id","target");
 			}
-//					ali[nameArr[n1]].setAttribute("id","targeted");//1
-//					nameArr.splice(n1,1);//2
+//			ali[nameArr[n]].setAttribute("id","target");//1
+			//↑↑↑↑↑↑↑↑作弊系统！(;￢＿￢)   
 		}
 	},600)
 }
 //开始停止按钮事件(～￣▽￣)～
 start.onclick=function(){
 	if(bol==false){
+		no++;
 		//如果是false那就开始（￣︶￣）↗
+		if(no>1){
+			ali[nameArr[n]].setAttribute("id","targeted");
+			nameArr.splice(n,1);
+		}		
 		start.style.borderBottom="2px solid #666";
 		start.style.borderRight="2px solid #666";
 		start.style.transform="translate(8px,8px)";
