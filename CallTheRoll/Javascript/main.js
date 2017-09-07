@@ -167,3 +167,4 @@ console.log("%c%s","color: lightseagreen; font-size: 12px;","——————�
 console.log("%c%s","color: lightseagreen; font-size: 12px;","1.link中icon图标无法引入网络路径，大部分图片有版权不显示。");123123
 console.log("%c%s","color: lightseagreen; font-size: 12px;","2.在随机过程中还可以再次点击开始按钮。");123123
 console.log("%c%s","color: lightseagreen; font-size: 12px;","3.退出全屏函数失效，已删除，在修改。");123123
+console.log("%c%s","color: lightseagreen; font-size: 12px;","4.题目选取完后还能开启点名。");123123
