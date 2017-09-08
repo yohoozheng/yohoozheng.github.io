@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Call The Roll-v1.0.0</title>
+		<link rel="icon" href="Image/target_128px_1207858_easyicon.net.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="Css/main.css"/>
+	</head>
+	<body>
+		<!--点名部分-->
+		<ul>
+			<li class="top">赵岗</li>
+			<li class="top">朴铭杰</li>
+			<li class="top">刘婧博</li>
+			<li class="top">张翔宇</li>
+			<li class="top">白鹏飞</li>
+			<li class="top">苗荟婷</li>
+			<li class="right r1">蒙芃憧</li>
+			<li class="right r2">鲁颂贺</li>
+			<li class="bottom b1">高京京</li>
+			<li class="bottom b2">孟宪英</li>
+			<li class="bottom b3">南晓烊</li>
+			<li class="bottom b4">冯有强</li>
+			<li class="bottom b5">吴嘉怡</li>
+			<li class="left" id="target">开始</li>
+			<div id="start">m9(`Д´)就sì你</div>
+		</ul>
+		<!--题目按钮-->
+		<div id="testBox">
+			<div class="test">①</div>
+			<div class="test">②</div>
+			<div class="test">③</div>
+			<div class="test">④</div>
+			<div class="test">⑤</div>
+			<div class="test">⑥</div>
+			<div class="test">⑦</div>
+			<div class="test">⑧</div>
+			<div class="test">⑨</div>
+			<div class="test">⑩</div>
+		</div>
+		<!--题目-->
+		<div id="txtBox">
+			<!--第一题-->
+			<div class="txt">
+				<span>第一题：</span>
+				<span>Javascript延迟加载的方法有哪些？</span>
+				<span class="answer">查看答案</span>
+				<p>Defer(只支持IE)和async、动态创建Dom方式、按需异步载入js</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第二题-->
+			<div class="txt">
+				<span>第二题：</span>
+				<span>Ajax的原理是什么？</span>
+				<span class="answer">查看答案</span>
+				<p>Ajax的原理就是运用XMLHttpRequest对象实现网页的异步更新，即在不重载页面的情况下向后台传送数据，从后台接收数据以及更新网页
+				if(window.XMLHttpRequest){</br>
+				&nbsp;&nbsp;"//IE7及以上和标准浏览器</br>
+				&nbsp;&nbsp;ajaxObj=new XMLHttpRequest();</br>
+				}else{</br>
+				&nbsp;&nbsp;//IE5,IE6</br>
+				&nbsp;&nbsp;ajaxObj=new ActiveXObject("Microsoft.XMLHTTP");</br>
+				}</br>
+				</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第三题-->
+			<div class="txt">
+				<span>第三题：</span>
+				<span>如何减少网页的加载时间？</span>
+				<span class="answer">查看答案</span>
+				<p>
+					1.避免坏请求</br>
+					2.合并CSS文件</br>
+					3.避免JS阻塞渲染</br>
+					4.缩小原始图像</br>
+					5.雪碧图</br>
+					6.减少重定向：刷新后重复提交</br>
+					7.减少DNS查找</br>
+					8.预加载组件</br>
+					&nbsp;:</br>
+					&nbsp;:</br>
+				</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第四题-->
+			<div class="txt">
+				<span>第四题：</span>
+				<span>你了解JS中的函数执行时执行环境是如何创建的吗？</span>
+				<span class="answer">查看答案</span>
+				<p>当调用函数时，首先函数会创建一个活动对象，也叫做变量对象，接着为函数调用创建一个类似数组的arguments对象用于保存传入的参数，再为执行环境分配作用域链，初始化变量，将函数内部除了实参和函数声明有值外，都被初始化为undefined，最后为this关键字赋值，至此函数环境创建成功，成功后开始将形参逐个进行赋值，最后执行函数内部语句。</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第五题-->
+			<div class="txt">
+				<span>第五题：</span>
+				<span>jQuery和Zepto的区别？各自的使用场景？</span>
+				<span class="answer">查看答案</span>
+				<p>jQuery主要用于pc端，当然有对应的jQuerymobile用于移动端，zepto比jQuery更加小巧，主要用于移动端，jquer mobile相对于zepto功能强大，但是体积也很庞大，zepto非常的轻量</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第六题-->
+			<div class="txt">
+				<span>第六题：</span>
+				<span>浏览器可以并行下载多少个资源？</span>
+				<span class="answer">查看答案</span>
+				<p>浏览器的并发请求数是不一样的，IE6是2个，IE7及以上的并发数是6个，FF和Chrome是6个，而safair并发请求数为4。</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第七题-->
+			<div class="txt">
+				<span>第七题：</span>
+				<span>你了解哪些布局？你平时有使用过什么布局实现</span>
+				<span class="answer">查看答案</span>
+				<p>浮动和定位，自适应布局，还有响应式以及弹性布局，弹性布局兼容所有浏览器，只不过IE6的话需要专门为它设计一些样式，而且由于它存在弹性，所以可以随用户的喜好来调节。首先浮动和定位的布局需要对各种不同的设备进行调节，每一个大小的设备都需要重新设定和更改。而自适应和响应式布局虽然可以很好地适应各种尺寸但是需要做浏览器的兼容，工作量大，而且代码多，使网页的加载变慢。</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第八题-->
+			<div class="txt">
+				<span>第八题：</span>
+				<span>你知道什么是CSS预处理吗？</span>
+				<span class="answer">查看答案</span>
+				<p>CSS预处理就是给CSS加入一些编程元素，让CSS能够像其他其他程序语言一样可以做一些预定的处理，这样既能提高开发效率，又能让代码变得通俗易懂，维护起来更便捷，也让CSS的功能更多更强，比如用CSS做出JS的特效，但他也有缺点，比如正因为让CSS功能更多更强而导致的CSS的内容增多，这就让用户打开的速度变慢，降低了用户的体验。</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第九题-->
+			<div class="txt">
+				<span>第九题：</span>
+				<span>你平常写CSS的时候有考虑过CSS的性能吗？</span>
+				<span class="answer">查看答案</span>
+				<p>如果不考虑CSS的性能，那网页在以后的维护和修改中会面临很多问题，代码就会变得越来越多，所以平时在写CSS的时候一般都会注意CSS的内容，比如不乱用浮动，移出空的CSS规则，不乱用web字体，不声明过多的font-size，还有就是注意正确使用display属性。</p>
+				<div class="close">关闭</div>
+			</div>
+			<!--第十题-->
+			<div class="txt">
+				<span>第十题：</span>
+				<span>你知道什么是CSS reset吗？</span>
+				<span class="answer">查看答案</span>
+				<p>CSS reset就是CSS样式重置，也就是我们在写CSS的时候最先要写的*{margin：0；padding：0；}最早的一份CSS reset来自tantek，很简单的代码，tantke根据自己的需要对浏览器的默认样式进行了一些重置。CSSreset的作用就是让各个浏览器的CSS样式有一个统一的基准，而这个基准更多地就是清零！可以说，兼容性是CSS reset诞生的主要原因之一，当然还有一方面的原因是类似于“库”的作用。</p>
+				<div class="close">关闭</div>
+			</div>
+		</div>
+		<!--全屏按钮-->
+		<div id="qp">
+			<div class="horn leftTop"></div>
+			<div class="horn rightTop"></div>
+			<div class="horn leftBottom"></div>
+			<div class="horn rightBottom"></div>
+			<div id="qptxt">全屏</div>
+		</div>
+		<!--
+		Then end. 丨 Rh九尾鱼 丨 Bug提交：yohoozheng324@163.com
+		——————————————————————— v1.0.0 ————————————————————————
+		1.link中icon图标无法引入网络路径，大部分图片有版权不显示。
+		2.在随机过程中还可以再次点击开始按钮。
+		3.退出全屏函数失效，已删除，在修改。
+		4.题目选取完后还能开启点名。
+		5.按ESC时，退出全屏和按钮内容更新信息不同步。
+-->
+	</body>
+	<script src="Javascript/main.js"></script>
+</html>
