@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/fish.ico" type="image/x-icon">
+		<title>特效时钟-Rh九尾鱼</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#clock{
+				width: 1050px;
+				margin: 300px auto;
+			}
+			span{
+				width: 15px;
+				text-align: center;
+				display: block;
+				font-size: 50px;
+				line-height: 200px;
+				float: left;
+			}
+			.numberBox{
+				float: left;
+				width: 150px;
+				height: 250px;
+				/*margin: 300px auto;*/
+				position: relative;
+				margin: 0 10px;
+			}
+			.numberBox div{
+				width: 148px;
+				height: 100px;
+				text-align: center;
+				font-size: 150px;
+				overflow: hidden;
+				background: white;
+				position: absolute;
+				background: #fff;
+				box-shadow: 5px 5px 5px gray;
+			}
+			.top{
+				border: 1px solid black;
+				border-bottom: 2px solid black;
+				line-height: 200px;
+				z-index: 1;
+				top: 0;
+			}
+			.bottom{
+				top: 102px;
+				border: 1px solid black;
+				border-top: 2px solid black;
+				line-height: 0px;
+				z-index: 2;
+			}
+			.active1{
+				z-index: 2;
+				transform-style: preserve-3d;
+				transform-origin: bottom;
+				transform: rotateX(0deg);
+				animation: act1 .8s;
+				animation-fill-mode:forwards;
+			}
+			@keyframes act1{
+				from{transform: rotateX(0deg);z-index: 2;}
+				to{transform: rotateX(180deg);z-index: 2;}
+				to{transform: rotateX(180deg);z-index: 1;}
+			}
+			.active2{
+				z-index: 1;
+				transform-style: preserve-3d;
+				transform-origin: top;
+				transform: rotateX(-180deg);
+				animation: act2 .8s;
+				animation-fill-mode:forwards;
+			}
+			@keyframes act2{
+				from{transform: rotateX(-180deg);z-index: 1;}
+				to{transform: rotateX(0deg);z-index: 2;}
+				to{transform: rotateX(0deg);z-index: 2;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<div id="box" class="numberBox">
+				<!--<div class="top active1">1</div>
+				<div class="bottom">1</div>
+				<div class="top">2</div>
+				<div class="bottom  active2">2</div>-->
+			</div>
+			<div id="box2" class="numberBox"></div>
+			<span>:</span>
+			<div id="box3" class="numberBox"></div>
+			<div id="box4" class="numberBox"></div>
+			<span>:</span>
+			<div id="box5" class="numberBox"></div>
+			<div id="box6" class="numberBox"></div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var numberBox=document.getElementsByClassName("numberBox");
+		var top=document.getElementsByClassName("top")[0];
+		var bottom=document.getElementsByClassName("bottom")[0];
+		var timer=null;
+		var n=0;
+		var zIndex=99;
+		var hourArr=[];
+		var minArr=[];
+		var secArr=[];
+		var now =new Date();  
+		        var sec=now.getSeconds();  
+		        var min=now.getMinutes();  
+		        var hour=now.getHours();
+        			console.log(hour,min,sec);
+        			
+        			if(hour<10){
+        				var str2=0;
+        				str2+=hour.toString();
+        				var newArr=str2.split("");
+        			}else{
+        				var str2=hour.toString();
+        				var newArr=str2.split("");
+        			}
+        			if(hourArr[0]!=newArr[0]){
+    					hourArr[0]=newArr[0];
+    					creatDiv(numberBox[0],hourArr[0],36000000);
+    				}
+    				if(hourArr[1]!=newArr[1]){
+    					hourArr[1]=newArr[1];
+    					creatDiv(numberBox[1],hourArr[1],3600000);
+    				}
+        			
+        			
+        			
+        			if(min<10){
+        				var str1=0;
+        				str1+=min.toString();
+        				var newArr=str1.split("");
+        			}else{
+        				var str1=min.toString();
+        				var newArr=str1.split("");
+        			}
+        			if(minArr[0]!=newArr[0]){
+    					minArr[0]=newArr[0];
+    					creatDiv(numberBox[2],minArr[0],600000);
+    				}
+    				if(minArr[1]!=newArr[1]){
+    					minArr[1]=newArr[1];
+    					creatDiv(numberBox[3],minArr[1],60000);
+    				}
+    				
+    				
+    				
+    				
+        			if(sec<10){
+        				var str=0;
+        				str+=sec.toString();
+        				var newArr=str.split("");
+        			}else{
+        				var str=sec.toString();
+        				var newArr=str.split("");
+        			}
+        			if(secArr[0]!=newArr[0]){
+    					secArr[0]=newArr[0];
+    					creatDiv(numberBox[4],secArr[0],10000);
+    				}
+    				if(secArr[1]!=newArr[1]){
+    					secArr[1]=newArr[1];
+    					creatDiv(numberBox[5],secArr[1],2000);
+    				}
+		function creatDiv(obj,a,time){
+			var div1=document.createElement("div");
+			var div2=document.createElement("div");
+			div1.className="top";
+			div2.className="bottom  active2";
+			div1.innerHTML=a;
+			div2.innerHTML=a;
+			obj.appendChild(div1);
+			obj.appendChild(div2);
+			deleteDiv(obj,div1,time);
+			deleteDiv(obj,div2,time);
+		}
+		function clock(){
+			timer=setInterval(function(){
+				var now =new Date();  
+		        var sec=now.getSeconds();  
+		        var min=now.getMinutes();  
+		        var hour=now.getHours();
+        			console.log(hour,min,sec);
+        			
+        			if(hour<10){
+        				var str2=0;
+        				str2+=hour.toString();
+        				var newArr=str2.split("");
+        			}else{
+        				var str2=hour.toString();
+        				var newArr=str2.split("");
+        			}
+        			if(hourArr[0]!=newArr[0]){
+    					hourArr[0]=newArr[0];
+    					creatDiv(numberBox[0],hourArr[0],36000000);
+    				}
+    				if(hourArr[1]!=newArr[1]){
+    					hourArr[1]=newArr[1];
+    					creatDiv(numberBox[1],hourArr[1],3600000);
+    				}
+        			
+        			
+        			
+        			if(min<10){
+        				var str1=0;
+        				str1+=min.toString();
+        				var newArr=str1.split("");
+        			}else{
+        				var str1=min.toString();
+        				var newArr=str1.split("");
+        			}
+        			if(minArr[0]!=newArr[0]){
+    					minArr[0]=newArr[0];
+    					creatDiv(numberBox[2],minArr[0],600000);
+    				}
+    				if(minArr[1]!=newArr[1]){
+    					minArr[1]=newArr[1];
+    					creatDiv(numberBox[3],minArr[1],60000);
+    				}
+    				
+    				
+    				
+    				
+        			if(sec<10){
+        				var str=0;
+        				str+=sec.toString();
+        				var newArr=str.split("");
+        			}else{
+        				var str=sec.toString();
+        				var newArr=str.split("");
+        			}
+        			if(secArr[0]!=newArr[0]){
+    					secArr[0]=newArr[0];
+    					creatDiv(numberBox[4],secArr[0],10000);
+    				}
+    				if(secArr[1]!=newArr[1]){
+    					secArr[1]=newArr[1];
+    					creatDiv(numberBox[5],secArr[1],2000);
+    				}
+			},1000)
+		}
+		clock();
+		function deleteDiv(obj1,obj2,time){
+			var deleteTime=setInterval(function(){
+				obj1.removeChild(obj2);
+				clearInterval(deleteTime);
+			},time)
+		}
+	</script>
+</html>
