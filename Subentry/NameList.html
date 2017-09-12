@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #666666;
+			}
+			#back{
+				width: 1500px;
+				position: absolute;
+				left: 50%;
+				margin-left:-750px ;
+				margin-top: 100px;
+				border: 5px solid white;
+				padding: 20px;
+			}
+			.sp{
+				font-size: 14px;
+				color: white;
+			}
+			input{
+				height: 20px;
+				border-radius:5px ;
+				border: 1px solid #ccc;
+				padding: 5px;
+				outline: none;
+			}
+			button{
+				height: 30px;
+				padding: 5px;
+				margin: 0 10px;
+				background: lightseagreen;
+				outline: none;
+				border: 1px solid lightseagreen;
+				border-radius: 5px;
+				color: white;
+				cursor: pointer;
+			}
+			table{
+				border-collapse: collapse;
+				width: 1490px;
+				margin: 20px 0px;
+				border: 1px solid white;
+				text-align: center;
+				color: white;
+			}
+			th{
+				font-size: 25px;
+				padding: 10px 0;
+			}
+			td{
+				padding: 10px 0;
+			}
+			tr{
+				background: #666666;
+			}
+			.chco{
+				background: lightseagreen;
+				color: white;
+			}
+			.chco1{
+				background: white;
+				color: lightseagreen;
+			}
+			.gre:hover{
+				background: lightseagreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="back">
+			<span class="sp">添加：</span>
+			<input type="text" id="name1" placeholder="请输入姓名..." />
+			<input type="text" id="age" placeholder="请输入年龄..." />
+			<button id="btn1">添加</button>
+			<span class="sp">变色:</span>
+			<button id="btn2" class="chco">开启移入变色</button>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>操作</th>
+				</tr>
+			</table>
+			<span class="sp">搜索：</span>
+			<input type="text" id="name2" placeholder="请输入姓名..." />
+			<button id="btn3">搜索</button>
+			<span class="sp">排序：</span>
+			<button id="btn4">年龄升序</button>
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var tr0=document.getElementsByTagName("tr");
+		var td;
+		var index=0;
+		//移入变色
+		$("#btn2").click(function(){
+			$("#btn2").toggleClass("chco1");
+			$("tr").toggleClass("gre");
+		})
+		
+		//创建一行
+		function createTr(){
+			if(!$("#name1").val()&&!$("#age").val()){
+				alert("请输入姓名与年龄!");
+			}else if(!$("#name1").val()&&$("#age").val()){
+				alert("请输入姓名!");
+			}else if($("#name1").val()&&!$("#age").val()){
+				alert("请输入年龄!");
+			}else{
+				$("<tr></tr>").appendTo("table").eq(0).html("<td>"+index+"</td><td>"+$("#name1").val()+"</td><td>"+$("#age").val()+"</td>").addClass("new").siblings().removeClass("new");;
+				$("<td></td>").appendTo(".new").html("删除").addClass("re");
+				index++;
+			}
+			$(".re").click(function(){
+				$(this).parent().remove();
+			})
+		}
+		//添加按钮
+		$("#btn1").click(function(){
+			createTr();
+			$("#name1").val("");
+			$("#age").val("");
+		})
+		//搜索按钮
+		$("#btn3").click(function(){
+			if(!$("#name2").val()){
+				alert("请输入姓名！");
+			}else{
+				$("tr").css({background:"#666666"});
+				for(var i=0;i<tr0.length;i++){
+					var sTxt=name2.value.toLowerCase();
+					var sTab=tr0[i].cells[1].innerHTML.toLowerCase();
+					var aArr=sTxt.split(" ");
+					for(var j=0;j<aArr.length;j++){
+						if(sTab.search(aArr[j])!=-1){
+							tr0[i].style.background="lightseagreen";
+						}
+					}
+				}
+			}
+		})
+		$("#btn4").click(function(){
+			if($("#btn4").html()=='年龄升序'){
+				this.innerHTML='恢复默认排序';
+				var aSage=[];
+				for(var i=0;i<tr0.length;i++){
+					aSage[i]=tr0[i];
+				}
+				aSage.sort(function (sage1,sage2){
+					var n1=parseInt(sage1.cells[2].innerHTML);
+					var n2=parseInt(sage2.cells[2].innerHTML);
+					return n1-n2;	
+				})
+				for(var i=0;i<aSage.length;i++){
+					$("table").append(aSage[i]);
+				}
+			}else{
+				this.innerHTML='年龄升序';
+				var aId=[];
+				for(var i=0;i<tr0.length;i++){
+					aId[i]=tr0[i];
+				}
+				aId.sort(function (tr1,tr2){
+					var n1=parseInt(tr1.cells[0].innerHTML);
+					var n2=parseInt(tr2.cells[0].innerHTML);
+					return n1-n2;
+				})
+				for(var i=0;i<aId.length;i++){
+					$("table").append(aId[i]);
+				}
+			}
+		})
+		
+	</script>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #666666;
+			}
+			canvas{
+				border: 10px solid lightseagreen;
+				display: block;
+				margin: 50px auto 0;
+			}
+			li{	
+				list-style: none;
+			}
+			#start{
+				width: 100px;
+				height: 55px;
+				line-height: 55px;
+				text-align: center;
+				color: white;
+				background: lightseagreen;
+				border-radius: 15px;
+				cursor: pointer;
+				position: absolute;
+				left: 50%;
+				top: 57.5%;
+				margin-left: -50px;
+				margin-top: -22.5px;
+			}
+			#title{
+				width: 600px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+				top: 25%;
+				font-size: 80px;
+				color: lightseagreen;
+			}
+			#end{
+				width: 600px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+				top: 25%;
+				font-size: 80px;
+				color: lightseagreen;
+				display: none;
+			}
+			#endc{
+				width: 600px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+				top: 40%;
+				font-size: 80px;
+				color: lightseagreen;
+				display: none;
+			}
+			#endn{
+				width: 600px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+				top: 10%;
+				font-size: 80px;
+				color: lightseagreen;
+				/*display: none;*/
+			}
+			#score{
+				width: 600px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+				top: 85%;
+				font-size: 50px;
+				color: lightseagreen;
+				display: none;
+			}
+			#ipt{
+				height: 100px;
+				width: 500px;
+				line-height: 100px;
+				font-size: 50px;
+				outline: none;
+				background: #666;
+				border: 0;
+				border-bottom: 5px solid lightseagreen;
+				display: block;
+				position: absolute;	
+				color: lightseagreen;
+				left: 49%;
+				margin-left: -250px;
+				top: 63%;
+				padding: 0 20px;
+			}
+			#box{
+				width: 200px;
+				position: absolute;	
+				color: lightseagreen;
+				left: 30%;
+				margin-left: -250px;
+				top: 7%;
+			}
+			#box li{
+				text-align: center;
+				font-size: 20px;
+				overflow: hidden;
+			}
+			p{
+				font-size: 20px;
+			}
+			.na{
+				/*width: 50px;*/
+				display: block;
+				text-align: left;
+				float: left;
+			}
+			.sc{
+				width: 50px;
+				display: block;
+				text-align: left;
+				float: right;
+			}
+			#exp{
+				width: 455px;
+				/*background: palegreen;*/
+				position: absolute;
+				left:84%;
+				margin-left: -250px;
+				top: 10%;
+				color: lightseagreen;
+				font-size: 20px;
+			}
+			@media only screen and (max-width: 1690px) {
+				#exp{display: none;}
+			}
+			@media only screen and (max-width: 1320px) {
+				#box{display: none;}
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<div id="title">Retro Snaker</div>
+		<div id="end">Game Over</div>
+		<div id="endn"></div>
+		<div id="endc"></div>
+		<input type="text"  id="ipt" placeholder="Enter your name..."/>
+		<div id="start">Start</div>
+		<div id="score"></div>
+		<div id="box">
+			<ul id="names">
+				<li style="border-bottom: 1px solid lightseagreen;font-size: 30px;">Scoreboard</li>
+				<!--<span class='na'>player</span><span class='sc'>100</span>-->
+			</ul>
+		</div>
+		<div id="exp">
+			<span>This project is no used local storage or cookies,if you want to play with your friends,please do not refresh the website.</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//声明画布
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext("2d");
+		//声明空数组来保存蛇的长度
+		var snakeBody=[];
+		var snakeMove;//蛇移动
+		//蛇默认方向
+		var speedX=20;
+		var speedY=0;
+		//食物
+		var newFood;
+		//得分
+		var goal;
+		//随机数
+		function ran(min,max){
+			return parseInt(Math.random()*(max-min+1)+min);
+		}
+		//随机颜色
+		function col(){
+			var r=ran(0,255);
+			var g=ran(0,255);
+			var b=ran(0,255);
+			return "rgb("+r+","+g+","+b+")";
+		}
+		//创建蛇
+		function Snake(x,y,color){
+			this.x=x;
+			this.y=y;
+			this.width=20;
+			this.height=20;
+			this.color=color;
+		}
+		Snake.prototype.drawSnake=function(ctx){
+			ctx.beginPath();
+			ctx.fillStyle=this.color;
+			ctx.fillRect(this.x,this.y,this.width,this.height);
+			ctx.closePath();
+		}
+		//初始化蛇
+		function initSnake(){
+			for(var j=0;j<3;j++){
+				var init=new Snake(100-j*20,100,"lightseagreen");
+				init.drawSnake(ctx);
+				snakeBody.push(init);
+			}
+		}
+		//蛇移动
+		function snakeM(){
+			snakeMove=setInterval(function(){
+				ctx.clearRect(snakeBody[snakeBody.length-1].x,snakeBody[snakeBody.length-1].y,20,20);//清除数组中最后一项的矩形区域
+				var init=new Snake(snakeBody[0].x+speedX,snakeBody[0].y+speedY,"lightseagreen");//向前添加矩形
+				init.drawSnake(ctx);
+				snakeBody.unshift(init);//想数组中前面添加新的对象
+				snakeBody.pop();//删除最后一个对象
+				//同时执行三个检测碰撞函数
+				HitCheck();
+				foodHitCheck();
+				selfHitCheck()
+			},150)
+		}
+		//结束函数
+		function theEnd(){
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			clearInterval(snakeMove);
+			start.style.display="block";
+			end.style.display="block";
+			endc.style.display="block";
+			endn.style.display="block";
+			ipt.style.display="block";
+			ipt.value=null;
+			score.style.display="none";
+			endc.innerHTML="Score："+goal;
+			endn.innerHTML=_name;
+			start.innerHTML="Restart";
+			creatScore();
+		}
+		//碰壁检测
+		function HitCheck(){
+			if(snakeBody[0].x<0||snakeBody[0].x==canvas.width||snakeBody[0].y<0||snakeBody[0].y==canvas.height){
+				theEnd();
+			}
+		}
+		//碰自己检测
+		function selfHitCheck(){
+			for(var i=1;i<snakeBody.length;i++){
+				if(snakeBody.length>=3){
+					//如果头部碰到身体的除了头部的任何一项
+					if(snakeBody[0].x==snakeBody[i].x&&snakeBody[0].y==snakeBody[i].y){
+						theEnd();
+					}
+				}
+			}
+		}
+		//按键
+		function Change(ev){
+			var evKeyCode = ev.keyCode;
+			switch(evKeyCode){
+				case 37:
+					if(speedX<=0){speedX=-20;speedY=0;}
+					break;
+				case 38:
+					if(speedY<=0){speedX=0;speedY=-20;}
+					break;
+				case 39:
+					if(speedX>=0){speedX=20;speedY=0;}
+					break;
+				case 40:
+					if(speedY>=0){speedX=0;speedY=20;}
+					break;
+			}
+		}
+		document.onkeydown = function(event){
+			var ev = event || window.event;
+			Change(ev);
+		}
+		//创建食物
+		function Creatfood(x,y){
+			this.x=x;
+			this.y=y;
+			this.height=20;
+			this.width=20;
+			this.drawfood=function(){
+				ctx.beginPath();
+				ctx.fillStyle="palevioletred";
+				ctx.fillRect(this.x,this.y,20,20);
+				ctx.closePath();
+			}
+		}
+//		var newFood=new Creatfood(ran(1,29)*20,ran(1,29)*20);
+//		newFood.drawfood();
+		//吃食物
+		function foodHitCheck(){
+			if(newFood.x==snakeBody[0].x&&newFood.y==snakeBody[0].y){
+				newFood=new Creatfood(ran(1,29)*20,ran(1,29)*20);
+				newFood.drawfood();
+				//判断食物是否在身上生成
+				for(var i=1;i<snakeBody.length;i++){
+					if(newFood.x==snakeBody[i].x&&newFood.y==snakeBody[i].y){
+						newFood=new Creatfood(ran(1,29)*20,ran(1,29)*20);
+						newFood.drawfood();
+					}
+				}
+				var init=new Snake(snakeBody[0].x+speedX,snakeBody[0].y+speedY,"lightgreen");
+//				init.drawSnake(ctx);
+				snakeBody.push(init);
+				goal++;
+				score.innerHTML="Score："+goal;
+			}
+		}
+		//其他界面
+		var start=document.getElementById("start");
+		var title=document.getElementById("title");
+		var end=document.getElementById("end");
+		var score=document.getElementById("score");
+		var ipt=document.getElementById("ipt");
+		var _name;
+		start.onclick=function(){
+			start.style.display="none";
+			title.style.display="none";
+			end.style.display="none";
+			endc.style.display="none";
+			endn.style.display="none";
+			ipt.style.display="none";
+			score.style.display="block";
+			score.innerHTML="Score：0";
+			if(ipt.value){
+				_name=ipt.value;
+			}else{
+				_name="player";
+			}
+			
+			snakeBody=[];
+			speedX=20;
+			speedY=0;
+			goal=0;
+			initSnake();
+			snakeM();
+			var nx=ran(1,29)*20
+			var ny=ran(1,29)*20
+			if(ny==100&&(nx==100||nx==80||nx==60)){
+				newFood=new Creatfood(nx,ny);
+				newFood.drawfood();
+			}
+			newFood=new Creatfood(nx,ny);
+			newFood.drawfood();
+		}
+		//游戏记录
+		var names=document.getElementById("names");
+		function creatScore(){
+			var li=document.createElement("li");
+			li.innerHTML="<span class='na'>"+_name+"：</span><span class='sc'>"+goal+"</span>"
+			names.appendChild(li);
+		}
+	</script>
+</html>
