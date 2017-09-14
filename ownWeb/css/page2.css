@@ -204,8 +204,8 @@ body{
 }
 #backTop{
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 20px;
+    bottom: 20px;
     background: rgb(214,49,73);
     color: #fff;
     text-align: center;
