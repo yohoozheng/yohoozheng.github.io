@@ -69,6 +69,7 @@ body{
     position: relative;
     overflow: hidden;
     transition: all .3s;
+    border-radius: 15px;
 }
 .post_head{
     text-align: center;
@@ -270,4 +271,7 @@ body{
 }
 .ewm1{
 	opacity: 1;
+}
+.demo{
+	border: 5px dashed rgb(214,49,73);
 }
