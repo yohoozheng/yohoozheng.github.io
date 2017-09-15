@@ -51,15 +51,15 @@ if(sec<10){
 }else{
 	var str=sec.toString();
 	var newArr=str.split("");
-			}
-			if(secArr[0]!=newArr[0]){
-				secArr[0]=newArr[0];
-				creatDiv(numberBox[4],secArr[0],10000);
-			}
-			if(secArr[1]!=newArr[1]){
-				secArr[1]=newArr[1];
-				creatDiv(numberBox[5],secArr[1],2000);
-			}
+}
+if(secArr[0]!=newArr[0]){
+	secArr[0]=newArr[0];
+	creatDiv(numberBox[4],secArr[0],10000);
+}
+if(secArr[1]!=newArr[1]){
+	secArr[1]=newArr[1];
+	creatDiv(numberBox[5],secArr[1],2000);
+}
 function creatDiv(obj,a,time){
 	var div1=document.createElement("div");
 var div2=document.createElement("div");
@@ -78,56 +78,54 @@ function clock(){
         var sec=now.getSeconds();  
         var min=now.getMinutes();  
         var hour=now.getHours();
-			console.log(hour,min,sec);
-			
-			if(hour<10){
-				var str2=0;
-				str2+=hour.toString();
-				var newArr=str2.split("");
-}else{
-	var str2=hour.toString();
-	var newArr=str2.split("");
-}
-if(hourArr[0]!=newArr[0]){
-	hourArr[0]=newArr[0];
-	creatDiv(numberBox[0],hourArr[0],36000000);
-}
-if(hourArr[1]!=newArr[1]){
-	hourArr[1]=newArr[1];
-	creatDiv(numberBox[1],hourArr[1],3600000);
-}
-if(min<10){
-	var str1=0;
-	str1+=min.toString();
-	var newArr=str1.split("");
-}else{
-	var str1=min.toString();
-	var newArr=str1.split("");
-}
-if(minArr[0]!=newArr[0]){
-	minArr[0]=newArr[0];
-	creatDiv(numberBox[2],minArr[0],600000);
-}
-if(minArr[1]!=newArr[1]){
-	minArr[1]=newArr[1];
-	creatDiv(numberBox[3],minArr[1],60000);
-}
-if(sec<10){
-	var str=0;
-	str+=sec.toString();
-	var newArr=str.split("");
-}else{
-	var str=sec.toString();
-	var newArr=str.split("");
-			}
-			if(secArr[0]!=newArr[0]){
-				secArr[0]=newArr[0];
-				creatDiv(numberBox[4],secArr[0],10000);
-			}
-			if(secArr[1]!=newArr[1]){
-				secArr[1]=newArr[1];
-				creatDiv(numberBox[5],secArr[1],2000);
-			}
+		if(hour<10){
+			var str2=0;
+			str2+=hour.toString();
+			var newArr=str2.split("");
+		}else{
+			var str2=hour.toString();
+			var newArr=str2.split("");
+		}
+		if(hourArr[0]!=newArr[0]){
+			hourArr[0]=newArr[0];
+			creatDiv(numberBox[0],hourArr[0],36000000);
+		}
+		if(hourArr[1]!=newArr[1]){
+			hourArr[1]=newArr[1];
+			creatDiv(numberBox[1],hourArr[1],3600000);
+		}
+		if(min<10){
+			var str1=0;
+			str1+=min.toString();
+			var newArr=str1.split("");
+		}else{
+			var str1=min.toString();
+			var newArr=str1.split("");
+		}
+		if(minArr[0]!=newArr[0]){
+			minArr[0]=newArr[0];
+			creatDiv(numberBox[2],minArr[0],600000);
+		}
+		if(minArr[1]!=newArr[1]){
+			minArr[1]=newArr[1];
+			creatDiv(numberBox[3],minArr[1],60000);
+		}
+		if(sec<10){
+			var str=0;
+			str+=sec.toString();
+			var newArr=str.split("");
+		}else{
+			var str=sec.toString();
+			var newArr=str.split("");
+		}
+		if(secArr[0]!=newArr[0]){
+			secArr[0]=newArr[0];
+			creatDiv(numberBox[4],secArr[0],10000);
+		}
+		if(secArr[1]!=newArr[1]){
+			secArr[1]=newArr[1];
+			creatDiv(numberBox[5],secArr[1],2000);
+		}
 	},1000)
 }
 clock();
