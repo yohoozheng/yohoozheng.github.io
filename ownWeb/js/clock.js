@@ -9,15 +9,13 @@ var hourArr=[];
 var minArr=[];
 var secArr=[];
 var now =new Date();  
-        var sec=now.getSeconds();  
-        var min=now.getMinutes();  
-        var hour=now.getHours();
-			console.log(hour,min,sec);
-			
-			if(hour<10){
-				var str2=0;
-				str2+=hour.toString();
-				var newArr=str2.split("");
+var sec=now.getSeconds();  
+var min=now.getMinutes();  
+var hour=now.getHours();
+if(hour<10){
+	var str2=0;
+	str2+=hour.toString();
+	var newArr=str2.split("");
 }else{
 	var str2=hour.toString();
 	var newArr=str2.split("");
@@ -30,9 +28,6 @@ if(hourArr[1]!=newArr[1]){
 	hourArr[1]=newArr[1];
 	creatDiv(numberBox[1],hourArr[1],3600000);
 }
-
-
-
 if(min<10){
 	var str1=0;
 	str1+=min.toString();
@@ -49,10 +44,6 @@ if(minArr[1]!=newArr[1]){
 	minArr[1]=newArr[1];
 	creatDiv(numberBox[3],minArr[1],60000);
 }
-
-
-
-
 if(sec<10){
 	var str=0;
 	str+=sec.toString();
@@ -105,9 +96,6 @@ if(hourArr[1]!=newArr[1]){
 	hourArr[1]=newArr[1];
 	creatDiv(numberBox[1],hourArr[1],3600000);
 }
-
-
-
 if(min<10){
 	var str1=0;
 	str1+=min.toString();
@@ -124,10 +112,6 @@ if(minArr[1]!=newArr[1]){
 	minArr[1]=newArr[1];
 	creatDiv(numberBox[3],minArr[1],60000);
 }
-
-
-
-
 if(sec<10){
 	var str=0;
 	str+=sec.toString();

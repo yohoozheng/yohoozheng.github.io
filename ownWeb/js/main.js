@@ -1,6 +1,5 @@
 var backTime=null;
 $(window).scroll(function(){
-	
 	var sTop=document.documentElement.scrollTop||document.body.scrollTop;
   	if(sTop>=350){
 		$("#backTop").css({"display":"block"});
@@ -25,6 +24,8 @@ $("#backTop").click(function(){
 	}
 	backT();
 })
-
+$(".com").on("click",function(){
+	$(".ewm").eq($(this).index()).toggleClass("ewm1");
+})
 
 

@@ -274,3 +274,19 @@ body{
     opacity: 1;
     /*background: white;*/
 }
+.com{
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+}
+.ewm{
+	width: 150px;
+	position: absolute;
+	top: -170px;
+	left: 0;
+	opacity: 0;
+	transition: all .5s;
+}
+.ewm1{
+	opacity: 1;
+}
