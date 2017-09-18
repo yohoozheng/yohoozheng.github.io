@@ -10,11 +10,14 @@ $(window).scroll(function(){
 		$("#backTopi").css({"display":"none"});
 	}
 });
+document.onmousewheel=function(){
+	clearInterval(backTime);
+}
 $("#backTop").click(function(){
 	var sTop=document.documentElement.scrollTop||document.body.scrollTop;
 	function backT(){
 		backTime=setInterval(function(){
-			sTop-=50;
+			sTop-=30;
 			document.documentElement.scrollTop=sTop;
 			document.body.scrollTop=sTop;
 			if(sTop<=0){
