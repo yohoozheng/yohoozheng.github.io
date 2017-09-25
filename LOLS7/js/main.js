@@ -1,3 +1,4 @@
+window.onload=function(){
 var dragonLight=document.getElementsByClassName("dragonLight")[0];
 var dragonLightLeft=0;
 function dragonLightMove(){
@@ -76,4 +77,10 @@ for(var i=0;i<off.length;i++){
 	off[i].onclick=function(){
 		alert("敬请期待！");
 	}
+}
+
+
+
+
+
 }
