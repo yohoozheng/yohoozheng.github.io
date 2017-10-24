@@ -78,9 +78,35 @@ for(var i=0;i<off.length;i++){
 		alert("敬请期待！");
 	}
 }
-
-
-
+var scoreFilter=document.getElementsByClassName("scoreFilter")[0];
+var aa=scoreFilter.getElementsByTagName("a");
+var scoreList=document.getElementsByClassName("scoreList");
+for(var i=0;i<aa.length;i++){
+	var div=document.createElement("div");
+	aa[i].index=i;
+	aa[i].onclick=function(){
+		for(var j=0;j<scoreList.length;j++){
+			aa[j].className="";
+			scoreList[j].style.display="none";
+		}
+		aa[this.index].className="selected";
+		scoreList[this.index].style.display="block";
+	}
+}
+var titleUl=document.getElementsByClassName("titleUl")[0];
+var titleUlLi=titleUl.getElementsByTagName("li");
+var tableCUl=document.getElementsByClassName("tableCUl");
+for(var i=0;i<titleUlLi.length;i++){
+	titleUlLi[i].index=i;
+	titleUlLi[i].onclick=function(){
+		for(var j=0;j<tableCUl.length;j++){
+			titleUlLi[j].className="";
+			tableCUl[j].style.display="none";
+		}
+		titleUlLi[this.index].className="selected";
+		tableCUl[this.index].style.display="block";
+	};
+}
 
 
 }
