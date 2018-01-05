@@ -1,0 +1,75 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;}
+li{list-style: none;text-align: -webkit-match-parent;}
+img{border: 0;}
+a:hover{filter: brightness(1.2);}
+a{transition: filter .2s linear;}
+html {
+  margin:0 auto;
+  padding:0;
+  height: 100%;
+}
+body{
+  background: #333333;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#lunchRaffle{
+  overflow: hidden;
+  height: 100%;
+  width:100%;
+}
+.backText{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.moveText{
+  width: 100px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.raffleBox{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,.6);
+  z-index: 999;
+  text-align: center;
+}
+.raffleBox h1{
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: #333333;
+  position: absolute;
+  top: 35%;
+  margin-left: 20px;
+  animation: moveAgin 2s infinite;
+}
+@keyframes moveAgin {
+  0%{transform: rotateZ(0);}
+  10%{transform: rotateZ(0);}
+  20%{transform: rotateZ(10deg);}
+  30%{transform: rotateZ(-10deg);}
+  40%{transform: rotateZ(10deg);}
+  50%{transform: rotateZ(-10deg);}
+  60%{transform: rotateZ(10deg);}
+  70%{transform: rotateZ(-10deg);}
+  100%{transform: rotateZ(0deg);}
+}
+.raffleBox button{
+  position: absolute;
+  top: 60%;
+  background: #333333;
+  padding: 15px 25px;
+  border: 0;
+  font-size: 20px;
+  color: white;
+  margin-left: -80px;
+  outline: none;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>LunchRaffle</title>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <div id="lunchRaffle">
+    <div class="backText">
+
+    </div>
+    <div class="raffleBox">
+      <h1>中午吃什么？</h1>
+      <div class="chooseFood"></div>
+      <button type="button" name="button">Come On！</button>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#lunchRaffle',
+    data: {
+      num:0,
+      food:["黄焖鸡米饭","叉烧鸡排饭","港式酱肉饭","酸辣粉","米线","红烧鱼","糖醋排骨","咖喱猪排饭","泡面","肯德基","麦当劳","咖喱鱼蛋饭","酥炸嫩鸡块","特色双宝饭","牛肉可乐饼","茄子鸡肉饭"],
+      colorArr:["#ffffcc","#ccffff","#ffcccc","#ccccff","#ff6666","#ccff99","#ffcc99","#66ccff"]
+    },
+    methods: {
+      // 随机数函数
+      random:function(min,max){
+        return parseInt(Math.random()*(max-min+1)+min);
+        // this.num=parseInt(Math.random()*(max-min+1)+min);
+      },
+      // 创建弹幕
+      creatDom:function(){
+        var div=document.createElement('div');
+        var backText=document.getElementsByClassName("backText")[0];
+        var createTop=this.random(1,95);
+        var randomColor=this.random(0,7);
+        var left=150;
+        var zoo=this.random(1,4);
+        var foodNum=this.random(0,this.food.length-1);
+        div.innerHTML=this.food[foodNum];
+        div.className="moveText";
+        div.style.color=this.colorArr[randomColor];
+        div.style.top=createTop+'%';
+        div.style.left='150%';
+        div.style.transform='scale('+zoo+')';
+        div.style.transformStyle="preserve-3d";
+
+        backText.appendChild(div);
+        var time=setInterval(function(){
+          left-=.5;
+          div.style.left=left+'%';
+          if(left<=-10){
+            backText.removeChild(div);
+            clearInterval(time);
+          }
+        },50)
+      },
+      // 动态生成函数
+      moveStart:function(){
+        var that=this;
+        var start=setInterval(function(){
+          that.creatDom();
+        },600)
+      }
+    },
+    created: function () {
+      this.moveStart();
+
+    }
+  })
+</script>
+</html>
