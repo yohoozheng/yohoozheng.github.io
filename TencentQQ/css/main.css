@@ -1,0 +1,233 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;color: #333;}
+html,body{height: 100%;width: 100%;}
+/*body{background: url("../image/bg	.jpg");background-size: 100%;}*/
+body{background: #ccc;}
+#taskbar{
+	height: 40px;
+	width: 100%;
+	background: rgba(0,0,0,.9);
+	position: absolute;
+	bottom: 0;
+}
+#taskbar .left{
+	float: left;
+}
+#taskbar .right{
+	float: right;
+}
+.start{
+	width: 50px;
+	height: 100%;
+	text-align: center;
+}
+.start:hover{
+	background: rgba(255,255,255,.1);
+}
+.start:hover .startImg{
+	width: 20px;
+	height: 20px;
+	background: url(../image/windows1.png);
+	background-size: 100%;
+}
+.start div{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	background: url(../image/windows.png);
+	background-size: 100%;
+}	
+.na{
+	width: 50px;
+	height: 100%;
+	text-align: center;
+}
+.na div{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	background: url(../image/na.png);
+	background-size: 100%;
+}	
+.na:hover{
+	background: rgba(255,255,255,.1);
+}
+.none{
+	width: 5px;
+	height: 100%;
+	border-left: 1px solid #666;
+}
+.none:hover{
+	background: rgba(255,255,255,.1);
+}
+.news{
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	text-align: center;
+}
+.news:hover{
+	background: rgba(255,255,255,.1);
+}
+.newsImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	background: url(../image/xiaoxi.png);
+	background-size: 100%;
+}
+.time{
+	color: white;
+	font-size: .5rem;
+	padding: 5px 6px;
+	text-align: center;
+}
+.time:hover{
+	background: rgba(255,255,255,.1);
+}
+.vioce{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.vioceImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/voice.png);
+	background-size: 100%;
+	margin-top: 10px;
+}
+.vioce:hover{
+	background: rgba(255,255,255,.1);
+}
+.wifi{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.wifiImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/wifi.png);
+	background-size: 100%;
+	margin-top: 12px;
+	transform: rotateZ(-50deg);
+}
+.wifi:hover{
+	background: rgba(255,255,255,.1);
+}
+.dian{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.dianImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/dianchi.png);
+	background-size: 100%;
+	margin-top: 10px;
+}
+.dian:hover{
+	background: rgba(255,255,255,.1);
+}
+.qq{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.qqImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/qq.png);
+	background-size: 100%;
+	margin-top: 10px;
+}
+.qq:hover{
+	background: rgba(255,255,255,.1);
+}
+.up{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.upImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/up.png);
+	background-size: 100%;
+	margin-top: 10px;
+}
+.up:hover{
+	background: rgba(255,255,255,.1);
+}
+.shuru{
+	width: 30px;
+	height: 100%;
+	text-align: center;
+}
+.shuruImg{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../image/shuru.png);
+	background-size: 100%;
+	margin-top: 8px;
+}
+.shuru:hover{
+	background: rgba(255,255,255,.1);
+}
+#qq{
+	width: 292px;
+	height: 762px;
+	background: paleturquoise;
+	position: absolute;
+	display: none;
+	position: relative;
+	border-radius: 2px;
+}
+#qq .top{
+	height: 120px;
+	width: 100%;
+	background: palegreen;
+}
+#qq .close{
+	width: 15px;
+	height: 15px;
+	border: rgba(0,0,0,0) solid 5px;
+	background: url(../image/close.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0,0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: all .3s;
+}
+#qq .close:hover{
+	background-color: #dd6572;
+}
+#qq .toSmall{
+	width: 15px;
+	height: 15px;
+	border: rgba(0,0,0,0) solid 5px;
+	background: url(../image/small.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0,0;
+	position: absolute;
+	top: 0;
+	right: 25px;
+	transition: all .3s;
+}
+#qq .toSmall:hover{
+	background-color: rgba(255,255,255,.3);
+}
