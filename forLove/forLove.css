@@ -1,0 +1,306 @@
+*{padding: 0;margin: 0;}
+html,body{width: 100%;height: 100%;position: relative;overflow: hidden;}
+a{text-decoration: none;}
+li{list-style: none;}
+.plateOne{
+	width: 100%;
+	height: 100%;
+	background-color: #333333;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	/*display: none;*/
+	z-index: 9;
+}
+.plateTwo{
+	position: absolute;
+	width: 100%;
+	/*opacity: 0;*/
+	top: 0;
+	left: 0;
+  min-height: 100vh;
+  background-color: #ffe;
+  /*background-image: url(http://davealger.info/i/squares.png);*/
+  background-position: bottom;
+  animation: 12s linear 0s infinite bp;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /*display: none;*/
+	z-index: 8;
+ 
+}
+.plateThree{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #333;
+	/*z-index: 99;*/
+	overflow: hidden;
+	z-index: 7;
+}
+.plateFour{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+	transform: scale(0);
+	transition: all .1s;
+	overflow: hidden;
+	z-index: 7;
+}
+.plateFour img{
+	border: 10px solid #ffffff;
+	display: block;
+	position: absolute;
+	top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.heartImg{
+	position: absolute;
+	bottom: -20px;
+	z-index: 1;
+}
+.wrapper {
+    position: relative;
+    height: 100%;
+    animation: toBlock 5s forwards;
+}
+@keyframes toBlock{
+	from{opacity: 0;transform: scale(0);}
+	to{opacity: 1;transform: scale(1);}
+}
+.container {
+    width: 700px;
+    height: 450px;
+    background: rgba(255,255,255,.8);
+    border-radius: 2px;
+    box-shadow: 0 0 15px #ccc;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+}
+.text {
+    fill: none;
+    stroke-width: 1;
+    font-size: 60px;
+    stroke-linejoin: round;
+    stroke-dasharray: 70 330;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 6s infinite linear;
+    animation: stroke 6s infinite linear;
+}
+.text:nth-child(5n + 1) {
+    stroke: #f2385a;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+}
+.text:nth-child(5n + 2) {
+    stroke: #f5a503;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s;
+}
+.text:nth-child(5n + 3) {
+    stroke: #e9f1df;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s;
+}
+.text:nth-child(5n + 4) {
+    stroke: #56d9cd;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s;
+}
+.text:nth-child(5n + 5) {
+    stroke: #3aa1bf;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s;
+}
+@-webkit-keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
+    }
+}
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
+    }
+}
+svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.start{
+	width: 150px;
+	height: 50px;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	border: 2px solid white;
+	background: lightcoral;
+	position: absolute;
+	border-radius: 50px;
+	cursor: pointer;
+	top: 400px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 2;
+  animation: cx 3s 5s forwards;
+  opacity: 0;
+}
+@keyframes cx{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+.start:hover{
+	background: IndianRed;
+	transform: scale(1.1);
+}
+.toNone{
+	animation: tonone 3s forwards;
+}
+@keyframes tonone{
+	from{opacity: 1;}
+	to{opacity: 0;z-index: 1;}
+}
+.changeBG{
+	animation: tono 3s 3s forwards;
+}
+@keyframes tono{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
+.toBlock{
+	animation: toShow 3s 3s forwards;
+}
+@keyframes toShow{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+@keyframes bp {
+  0% {
+    background-color: ivory;
+    background-position:  200px 0;
+  }
+  25% {
+    background-color: white;
+    background-position:  150px 50px;
+  }
+  50% {
+    background-color: ivory;
+    background-position:  100px 100px;
+  }
+  75% {
+    background-color: white;
+    background-position:  50px 150px;
+  }
+  100% {
+    background-color: ivory;
+    background-position:  0 200px;
+  }
+}	
+#ds-thread .ds-powered-by{display:none!important;}
+#main{width:100%;}
+#wrap{position:relative;margin:0 auto;width:1100px;height:680px;}
+#text{width:400px;height:425px;left:60px;top:10px;position:absolute;}
+#code{display:none;font-size:16px;}
+#clock-box {position:absolute;left:60px;top:550px;font-size:28px;display:none;}
+#clock-box a {font-size:28px;text-decoration:none;}
+#clock{margin-left:48px;}
+#clock .digit {font-size:64px;}
+#canvas{margin:0 auto;width:100%;height:100%;}
+#error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
+.hand{cursor:pointer;}
+.say{margin-left:5px;}
+.space{margin-right:150px;}
+.toLast{
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	bottom: 15%;
+	left: 50%;
+	margin-left: -32px;
+	cursor: pointer;
+	animation: updown 3s infinite;
+}
+@keyframes updown{
+	0%{bottom: 15%;}
+	50%{bottom: 17%;}
+	100%{bottom: 15%;}
+}
+.toLast img{
+	width: 100%;
+	height: 100%;
+}
+.toTop{
+	animation: totop 2s forwards;
+}
+@keyframes totop{
+	0%{top: 0;opacity: 1;}
+	100%{top: -500px;opacity: 0;}
+}
+.plateThree>img{position: absolute;cursor: pointer;transition: all .5s;}
+.plateThree>img:hover{
+	box-shadow: 0px 0px 20px #000;
+	transform: scale(1.1);
+}
+.pic01{
+	left: 100px;
+	top: 60px;
+	transform: rotateZ(-30deg);
+}
+.pic02{
+	left: 100px;
+	top: 360px;
+	transform: rotateZ(10deg);
+}
+.pic03{
+	left: 100px;
+	top: 560px;
+	transform: rotateZ(-20deg);
+}
+.pic04{
+	right: 100px;
+	top: 60px;
+	transform: rotateZ(20deg);
+}
+.pic05{
+	right: 150px;
+	top: 320px;
+	transform: rotateZ(-30deg);
+}
+.pic06{
+	right: 100px;
+	top: 520px;
+	transform: rotateZ(10deg);
+}
+.endText{
+	font-size: 50px;
+	width: 400px;
+	height: 180px;
+	color: lightcoral;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -90px;
+}
